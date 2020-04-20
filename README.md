@@ -12,6 +12,4 @@ Used plugins:
 - [getflutter](https://pub.dev/packages/getflutter)
 
 ## Output
-<img src="/screenshots/screen2.jpg" height="500"/>
-<img src="/screenshots/screen3.jpg" height="500"/>
-<img src="/screenshots/screen1.jpg" height="500"/>
+<img src="/screenshots/screen2.jpg" height="500"/>  <img src="/screenshots/screen3.jpg" height="500"/>  <img src="/screenshots/screen1.jpg" height="500"/>
