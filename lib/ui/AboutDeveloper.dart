@@ -18,7 +18,10 @@ class AboutDeveloper extends StatelessWidget {
                   children: <Widget>[
                     CircleAvatar(
                       // Getting my image from Linkedin
-                      backgroundImage: NetworkImage("https://media-exp1.licdn.com/dms/image/C5103AQHpTGlUbyGzMQ/profile-displayphoto-shrink_200_200/0?e=1593043200&v=beta&t=skK2ABYx6mafAFVa44kJ5_CPTZiW3RVzzt3e9a_AKpQ"),
+                      backgroundImage: NetworkImage(
+                          "https://media-exp1.licdn.com/"
+                              "dms/image/C5103AQHpTGlUbyGzMQ/profile-displayphoto-shrink_200_200/"
+                              "0?e=1593043200&v=beta&t=skK2ABYx6mafAFVa44kJ5_CPTZiW3RVzzt3e9a_AKpQ"),
                       radius: 60.0,
                     ),
                     SizedBox(

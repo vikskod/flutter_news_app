@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:newsapp/ui/AboutDeveloper.dart';
+import 'package:newsapp/ui/Everything.dart';
 import 'package:newsapp/ui/HeadLines.dart';
 
 import 'model/DrawerItem.dart';
 
 class HomePage extends StatefulWidget {
+
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -28,17 +30,17 @@ class _HomePageState extends State<HomePage> {
       case 0:
         return HeadLines();
       case 1:
-        return AboutDeveloper();
+        return Everything(drawerItems[pos].title);
       case 2:
-        return AboutDeveloper();
+        return Everything(drawerItems[pos].title);
       case 3:
-        return AboutDeveloper();
+        return Everything(drawerItems[pos].title);
       case 4:
-        return AboutDeveloper();
+        return Everything(drawerItems[pos].title);
       case 5:
-        return AboutDeveloper();
+        return Everything(drawerItems[pos].title);
       case 6:
-        return AboutDeveloper();
+        return Everything(drawerItems[pos].title);
       case 7:
         return AboutDeveloper();
     }
@@ -69,7 +71,9 @@ class _HomePageState extends State<HomePage> {
                 accountEmail: Text("vparajuli819@gmail.com"),
                 currentAccountPicture: CircleAvatar(
                   backgroundColor: Colors.white,
-                  child: Icon(Icons.account_circle),
+                  backgroundImage: NetworkImage("https://media-exp1.licdn.com/"
+                      "dms/image/C5103AQHpTGlUbyGzMQ/profile-displayphoto-shrink_200_200/"
+                      "0?e=1593043200&v=beta&t=skK2ABYx6mafAFVa44kJ5_CPTZiW3RVzzt3e9a_AKpQ"),
                 ),
                 otherAccountsPictures: <Widget>[
                   CircleAvatar(

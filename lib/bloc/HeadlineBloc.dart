@@ -1,4 +1,4 @@
-import 'package:newsapp/model/HeadlineResponse.dart';
+import 'package:newsapp/model/NewsResponse.dart';
 import 'package:newsapp/persistance/Repository.dart';
 import 'package:rxdart/rxdart.dart';
 
@@ -10,12 +10,12 @@ own BLoC class that holds the business logic.
 class HeadlineBloc {
   Repository _repository = Repository();
 
-  final _headlineFetcher = PublishSubject<HeadlineResponse>();
+  final _headlineFetcher = PublishSubject<NewsResponse>();
 
-  Stream<HeadlineResponse> get headline => _headlineFetcher.stream;
+  Stream<NewsResponse> get headline => _headlineFetcher.stream;
 
   fetchHeadline() async {
-    HeadlineResponse headlineResponse = await _repository.fetchHeadline();
+    NewsResponse headlineResponse = await _repository.fetchHeadline();
     _headlineFetcher.sink.add(headlineResponse);
   }
 

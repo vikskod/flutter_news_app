@@ -1,9 +1,9 @@
-class HeadlineResponse {
+class NewsResponse {
   String _status;
   int _totalResults;
   List<Articles> _articles;
 
-  HeadlineResponse({String status, int totalResults, List<Articles> articles}) {
+  NewsResponse({String status, int totalResults, List<Articles> articles}) {
     this._status = status;
     this._totalResults = totalResults;
     this._articles = articles;
@@ -16,7 +16,7 @@ class HeadlineResponse {
   List<Articles> get articles => _articles;
   set articles(List<Articles> articles) => _articles = articles;
 
-  HeadlineResponse.fromJson(Map<String, dynamic> json) {
+  NewsResponse.fromJson(Map<String, dynamic> json) {
     _status = json['status'];
     _totalResults = json['totalResults'];
     if (json['articles'] != null) {

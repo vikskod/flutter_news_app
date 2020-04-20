@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:getflutter/components/carousel/gf_carousel.dart';
 import 'package:newsapp/bloc/HeadlineBloc.dart';
-import 'package:newsapp/model/HeadlineResponse.dart';
+import 'package:newsapp/model/NewsResponse.dart';
 
 class HeadLines extends StatefulWidget {
   @override
   _HeadLinesState createState() => _HeadLinesState();
 }
 
-class _HeadLinesState extends State<HeadLines> {
+class _HeadLinesState extends State<HeadLines> with WidgetsBindingObserver {
   var topHeadlineList = <Widget>[];
   var otherHeadlineList = <Widget>[];
 
@@ -19,7 +19,7 @@ class _HeadLinesState extends State<HeadLines> {
       child: Center(
         child: StreamBuilder(
           stream: headlineBloc.headline,
-          builder: (context, AsyncSnapshot<HeadlineResponse> snapshot) {
+          builder: (context, AsyncSnapshot<NewsResponse> snapshot) {
             if (snapshot.hasData) {
               return buildAllHeadlineScreen(snapshot.data);
             } else if (snapshot.hasError) {
@@ -32,7 +32,7 @@ class _HeadLinesState extends State<HeadLines> {
     );
   }
 
-  SingleChildScrollView buildAllHeadlineScreen(HeadlineResponse data) {
+  SingleChildScrollView buildAllHeadlineScreen(NewsResponse data) {
     print("========= SIZE ========${data.articles.length}");
     for (var i = 0; i < data.articles.length; i++) {
       var d = data.articles[i];
@@ -111,9 +111,5 @@ class _HeadLinesState extends State<HeadLines> {
         ],
       ),
     );
-  }
-
-  Future refreshHeadline() async {
-    setState(() {});
   }
 }
