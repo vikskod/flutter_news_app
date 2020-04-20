@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:newsapp/screens/AboutDeveloper.dart';
+import 'package:newsapp/ui/AboutDeveloper.dart';
+import 'package:newsapp/ui/HeadLines.dart';
 
-import 'drawer/DrawerItem.dart';
+import 'model/DrawerItem.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -11,7 +12,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int selectedDrawerIndex = 0;
   static final drawerItems = [
-    new DrawerItem("Home", Icons.home),
+    new DrawerItem("Headlines", Icons.label_important),
     new DrawerItem("Politics", Icons.account_balance),
     new DrawerItem("Sports", Icons.directions_bike),
     new DrawerItem("Social", Icons.people),
@@ -25,7 +26,7 @@ class _HomePageState extends State<HomePage> {
   getDrawerItemWidget(int pos) {
     switch (pos) {
       case 0:
-        return Text("Home");
+        return HeadLines();
       case 1:
         return AboutDeveloper();
       case 2:
