@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:getflutter/components/carousel/gf_carousel.dart';
 import 'package:newsapp/bloc/HeadlineBloc.dart';
 import 'package:newsapp/model/NewsResponse.dart';
+import 'package:newsapp/ui/NewsDetail.dart';
 
 class HeadLines extends StatefulWidget {
   @override
@@ -38,43 +39,51 @@ class _HeadLinesState extends State<HeadLines> with WidgetsBindingObserver {
       var d = data.articles[i];
       if (i <= 5) {
         // Showing top headline list till list position 5
-        topHeadlineList.add(Container(
-          margin: EdgeInsets.all(8.0),
-          child: ClipRRect(
-              borderRadius: BorderRadius.all(Radius.circular(5.0)),
-              child: Stack(
-                children: <Widget>[
-                  Image.network(d.urlToImage != null ? d.urlToImage : "",
-                      fit: BoxFit.cover, height: 1000.0, width: 1000.0),
-                  Container(
-                      decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment.bottomCenter,
-                      end: Alignment.topCenter,
-                      colors: <Color>[
-                        Colors.black.withOpacity(1),
-                        Colors.black.withOpacity(0),
-                        Colors.black.withOpacity(0)
-                      ],
-                    ),
-                  )),
-                  Align(
-                    alignment: Alignment.bottomCenter,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        d.title,
-                        maxLines: 3,
-                        textAlign: TextAlign.justify,
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: Colors.white,
+        topHeadlineList.add(InkWell(
+          child: Container(
+            margin: EdgeInsets.all(8.0),
+            child: ClipRRect(
+                borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                child: Stack(
+                  children: <Widget>[
+                    Image.network(d.urlToImage != null ? d.urlToImage : "",
+                        fit: BoxFit.cover, height: 1000.0, width: 1000.0),
+                    Container(
+                        decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.bottomCenter,
+                        end: Alignment.topCenter,
+                        colors: <Color>[
+                          Colors.black.withOpacity(1),
+                          Colors.black.withOpacity(0),
+                          Colors.black.withOpacity(0)
+                        ],
+                      ),
+                    )),
+                    Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          d.title,
+                          maxLines: 3,
+                          textAlign: TextAlign.justify,
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
-                    ),
-                  )
-                ],
-              )),
+                    )
+                  ],
+                )),
+          ),
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => NewsDetail(d)));
+            }
         ));
       }
       if (i > 5) {
