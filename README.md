@@ -11,5 +11,8 @@ Used plugins:
 - [intl](https://pub.dev/packages/rxdart)
 - [getflutter](https://pub.dev/packages/getflutter)
 
-## Output
+## iOS Output
+<img src="/screenshots/ios2.png" height="500"/>  <img src="/screenshots/ios1.png" height="500"/>  <img src="/screenshots/ios3.png" height="500"/>  <img src="/screenshots/ios4.png" height="500"/>
+
+## Android Output
 <img src="/screenshots/screen2.jpg" height="500"/>  <img src="/screenshots/screen3.jpg" height="500"/>  <img src="/screenshots/screen1.jpg" height="500"/>  <img src="/screenshots/screen4.jpg" height="500"/>

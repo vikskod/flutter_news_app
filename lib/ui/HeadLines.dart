@@ -9,7 +9,7 @@ class HeadLines extends StatefulWidget {
   _HeadLinesState createState() => _HeadLinesState();
 }
 
-class _HeadLinesState extends State<HeadLines> with WidgetsBindingObserver {
+class _HeadLinesState extends State<HeadLines> {
   var topHeadlineList = <Widget>[];
   var otherHeadlineList = <Widget>[];
 

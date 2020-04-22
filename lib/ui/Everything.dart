@@ -5,6 +5,7 @@ import 'package:newsapp/model/NewsResponse.dart';
 String _key;
 
 class Everything extends StatefulWidget {
+
   Everything(String key) {
     _key = key;
   }
